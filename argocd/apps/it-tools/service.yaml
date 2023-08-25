@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     metallb.universe.tf/loadBalancerIPs: 192.168.1.205
-  name: it-tools-service
+  name: it-tools
   namespace: default
 spec:
   type: LoadBalancer
