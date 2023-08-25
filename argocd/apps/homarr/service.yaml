@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     metallb.universe.tf/loadBalancerIPs: 192.168.1.208
-  name: homarr-service
+  name: homarr
   namespace: default
 spec:
   type: LoadBalancer

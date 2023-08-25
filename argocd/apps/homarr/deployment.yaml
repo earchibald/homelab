@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: homarr-deployment
+  name: homarr
   namespace: default
   labels:
     app.kubernetes.io/name: homarr
