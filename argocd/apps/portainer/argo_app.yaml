@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portainer
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: portainer
+    repoURL: https://portainer.github.io/k8s/
+    targetRevision: 1.0.44
+    helm:
+      releaseName: portainer
+      valuesObject:
+        service:
+          type: LoadBalancer
+          annotations:
+            metallb.universe.tf/loadBalancerIPs: 192.168.1.206
+        tls:
+          force: false
+        persistence:
+          storageClass: nfs-csi
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: portainer
