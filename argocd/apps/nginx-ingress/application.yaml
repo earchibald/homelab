@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-ingress
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: nginx-ingress
+    repoURL: https://kubernetes.github.io/ingress-nginx
+    targetRevision: 4.10.1
+    helm:
+      releaseName: quickstart
+      parameters:
+        - name: "nginx-ingress.controller.service.annotations.metallb\\.universe\\.tf/loadBalancerIPs"
+          value: 192.168.1.2
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
