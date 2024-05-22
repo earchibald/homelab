@@ -13,7 +13,7 @@ spec:
       releaseName: quickstart
       parameters:
         - name: "nginx-ingress.controller.service.annotations.metallb\\.universe\\.tf/loadBalancerIPs"
-          value: 192.168.1.2
+          value: 192.168.1.252
   destination:
     server: "https://kubernetes.default.svc"
     namespace: default
