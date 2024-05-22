@@ -17,7 +17,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: quickstart
-  namespace: flux-system
+  namespace: ingress-nginx
 spec:
   chart:
     spec:
@@ -29,7 +29,6 @@ spec:
         name: ingress-nginx
         namespace: flux-system
   interval: 5h
-  namespace: ingress-nginx
   values:
     controller:
       service:
