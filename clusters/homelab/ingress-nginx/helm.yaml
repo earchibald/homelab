@@ -17,8 +17,14 @@ spec:
   chart:
     spec:
       chart: ingress-nginx
+      version: '4.0.*'
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
         name: ingress-nginx
   interval: 1d
+  values:
+    controller:
+      service:
+        annotations:
+          "metallb.universe.tf/loadBalancerIPs": "192.168.1.252"
