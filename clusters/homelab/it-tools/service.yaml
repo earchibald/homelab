@@ -6,7 +6,7 @@ metadata:
   name: it-tools
   namespace: default
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app.kubernetes.io/name: it-tools
   ports:
