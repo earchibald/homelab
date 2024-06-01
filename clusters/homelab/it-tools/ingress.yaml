@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-it-tools
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.1.0/24
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/issuer: letsencrypt-nginx
+spec:
+  tls:
+  - hosts:
+    - it-tools.blocknothing.org
+    secretName: letsencrypt-nginx-it-tools
+  rules:
+    - host: it-tools.blocknothing.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: it-tools
+                port:
+                  number: 80
+  ingressClassName: nginx
+
