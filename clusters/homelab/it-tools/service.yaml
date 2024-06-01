@@ -7,7 +7,6 @@ metadata:
   namespace: default
 spec:
   type: LoadBalancer
-  externalTrafficPolicy: Local
   selector:
     app.kubernetes.io/name: it-tools
   ports:
