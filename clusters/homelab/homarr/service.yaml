@@ -6,7 +6,7 @@ metadata:
   name: homarr
   namespace: default
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app.kubernetes.io/name: homarr
   ports:
