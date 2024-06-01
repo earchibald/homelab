@@ -34,7 +34,5 @@ spec:
       service:
         annotations:
           "metallb.universe.tf/loadBalancerIPs": "192.168.1.252"
-      config:
-        use-proxy-protocol: "true"
 
 
