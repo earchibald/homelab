@@ -4,7 +4,7 @@ variable "dns_zone_name" {
 }
 
 variable "external_ip" {
-  default = "73.92.13.198"
+  default = "192.168.1.252"
   type    = string
 }
 
