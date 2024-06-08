@@ -31,6 +31,11 @@ spec:
   interval: 5h
   values:
     controller:
+      metrics:
+        enabled: true
+      podAnnotations:
+        prometheus.io/port: "10254"
+        prometheus.io/scrape: "true"
       service:
         annotations:
           "metallb.universe.tf/loadBalancerIPs": "192.168.1.252"
